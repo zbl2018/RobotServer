@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ckplayer网页播放视频代码</title>
+</head>
+
+<body>
+<center><div id="video"><div id="a1"></div></div></center>
+
+<script type="text/javascript" src="js/ckplayer.js" charset="utf-8"></script>
+<script type="text/javascript">
+	var flashvars={
+		f:'/home/ubuntu/1_0.mp4',
+		c:0,
+		b:1
+		};
+	var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always'};
+	CKobject.embedSWF('ckplayer/ckplayer.swf','a1','ckplayer_a1','600','400',flashvars,params);
+	/*
+	CKobject.embedSWF(播放器路径,容器id,播放器id/name,播放器宽,播放器高,flashvars的值,其它定义也可省略);
+	下面三行是调用html5播放器用到的
+	*/
+	var video=['/home/ubuntu/1_0.mp4->video/mp4'];
+	var support=['iPad','iPhone','ios','android+false','msie10+false','webKit'];
+	CKobject.embedHTML5('video','ckplayer_a1',600,400,video,flashvars,support);
+  </script>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>Copyright &copy; 2015<a target="_blank" href="http://www.moke8.com/">魔客吧</a></p>
+</div>
+</body>
+</html>
+

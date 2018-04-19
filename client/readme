@@ -1,0 +1,3 @@
+gcc -c AES.cpp -o AES.o
+g++ -o client client.c AES.o -ljson -lcryptopp -lpthread
+./client 
