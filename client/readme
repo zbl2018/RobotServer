@@ -1,3 +1,6 @@
 gcc -c AES.cpp -o AES.o
 g++ -o client client.c AES.o -ljson -lcryptopp -lpthread
 ./client 
+
+
+./cli 193.112.128.66 22222 3.jpg

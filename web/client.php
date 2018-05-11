@@ -1,18 +1,17 @@
 <html>
 <head>
-<title>WebSocket在线控制平台</title>
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>在线控制平台</title>
+<meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <style>
 html,body{font:normal 0.9em arial,helvetica;text-align:center}
-#log {margin:0 auto;width:440px; height:200px; border:1px solid #7F9DB9; overflow:auto;}
+#log {margin:0 auto;width:340px; height:200px; border:1px solid #7F9DB9; overflow:auto;}
 #msg {margin:0 auto;width:330px;}
 </style>
 <script>
 var socket;
 function init(){
 	if(!("WebSocket" in window)){ log('当前浏览器不支持WebSocket');return; }
-	var host = "wss://193.112.128.66:9002";
+	var host = "ws://193.112.128.66:20000";
 	try{
 		socket = new WebSocket(host);
 		log('WebSocket初始化状态 '+socket.readyState);

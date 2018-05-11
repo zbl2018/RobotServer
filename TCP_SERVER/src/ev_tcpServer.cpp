@@ -79,7 +79,6 @@ void ev_tcpServer::accept_socket_cb(struct ev_loop *loop,ev_io *w, int revents)
         if(fd > 0){
             break;
         }
-
         if(errno == EAGAIN || errno == EWOULDBLOCK){
             continue;
         }
@@ -526,18 +525,3 @@ int ev_tcpServer::GetWs_connectID(int this_car_tcpId){
      //cout<<"ws_id:"<<ws_id<<endl;
     
 }
-// string ev_tcpServer::decodejson(string json_data ,int type){ 
-//     Json::Reader reader;
-//     Json::Value value;
-//      if(reader.parse(json_data,value)){
-//         if(value["action"].isNull()){
-//             return JSON_NULL;
-//         }
-//     }
-//     //string js;
-//     switch(type){
-//         case 1: return value["action"].asString();
-//         case 2: return value["serial"].asString();
-//         default : return JSON_NULL;
-//     } 
-// }

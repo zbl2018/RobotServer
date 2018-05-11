@@ -12,7 +12,7 @@
 
     <script type="text/javascript" charset="utf-8">
 
-        var socket = new WebSocket("ws://"+document.domain+":8080");
+        var socket = new WebSocket("ws://193.112.128.66:20000");
         var back = document.getElementById('output');
         var backcontext = back.getContext('2d');
         var video = document.getElementsByTagName('video')[0];
@@ -36,7 +36,8 @@
                 }
             }
             if(video.src){
-                socket.send(back.toDataURL("image/jpeg", 0.5));
+                //socket.send(back.toDataURL("image/jpeg", 0.5));
+                socket.send(back.toSring());
             }
             setTimeout(draw, 100);
         }

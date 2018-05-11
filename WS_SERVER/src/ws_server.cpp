@@ -147,8 +147,8 @@ void * ws_server::recvInfo_from_TcpServer(void* args){
         int ws_id;
         websocketpp::connection_hdl ws_hdl;
 	while(1){
-        memset(data_buf,'\0',MAX_BUF_LEN);
-        memset(head_buf,0,HEAD_LEN);
+        // memset(data_buf,'\0',MAX_BUF_LEN);
+        // memset(head_buf,0,HEAD_LEN);
        
 		ret_len = recv(clientSocket_fd,head_buf,HEAD_LEN,MSG_WAITALL);
         //cout<<"hex:"<<hex<<head_buf<<endl;
