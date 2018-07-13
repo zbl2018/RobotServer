@@ -1,6 +1,6 @@
+//编译并运行测试客户端，注意：客户端使用了aes加密库，但是server还没有加入aes加密的功能
+//该客户端会往tcp_server一直发送json数据
 gcc -c AES.cpp -o AES.o
-g++ -o client client.c AES.o -ljson -lcryptopp -lpthread
+g++ -o client client.c AES.o -L./lib -ljson -lcryptopp -lpthread
 ./client 
 
-
-./cli 193.112.128.66 22222 3.jpg

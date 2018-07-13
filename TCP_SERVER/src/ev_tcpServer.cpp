@@ -91,7 +91,7 @@ void ev_tcpServer::accept_socket_cb(struct ev_loop *loop,ev_io *w, int revents)
     // std::cout<<"aaa:"<<sin.sin_addr.s_addr<<endl;
     // cout<<"1111:"<<inet_addr("127.0.0.1")<<endl;
     //==========判断链接是来自底层还是来自net_node、本地web=========================
-    if(sin.sin_port == 20108){
+    if(sin.sin_port == 20108){//此处是错误的，server检测到小车的连接端口是一直在改变的（小车处于内网，并无固定端口），应该通过数据库设计唯一标识
         ev_io_init(rw_watcher,recv_socket_cb_hardware,fd,EV_READ);
     }
     if(sin.sin_addr.s_addr==inet_addr("127.0.0.1")){

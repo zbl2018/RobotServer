@@ -1,0 +1,7 @@
+//运行下面三个命令，在ubuntu下安装mysql
+sudo apt-get install mysql-server
+sudo apt-get install mysql-client
+sudo apt-get install libmysqlclient-dev
+
+//可以通过如下命令进入MySQL服务(工作站安装的mysql密码为：7259)：
+mysql -uroot -p你的密码

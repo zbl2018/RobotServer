@@ -22,7 +22,7 @@ AES my_aes;
 int clientSocket;
 struct sockaddr_in serverAddr;
 char sendbuf[200];
-const char * servInetAddr = "193.112.128.66";   
+const char * servInetAddr = "127.0.0.1";   
 static pthread_rwlock_t rwlock;//读写锁对象
 int cat=0;
 

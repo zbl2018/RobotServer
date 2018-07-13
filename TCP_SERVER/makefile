@@ -7,9 +7,9 @@ OBJ_DIR = $(BUILD_DIR)/obj
 DEPS_DIR  = $(BUILD_DIR)/deps
 #这里添加其他头文件路径
 INC_DIR =-I./include
-#这里添加编译参数
+#这里添加编译参数 '-Wl,-rpath,./lib'指明了运行时所需要的库在./lib -l -L指明了编译时需要的动态链接库
 CC_FLAGS := $(INC_DIR) -g -std=c++11
-LNK_FLAGS := -L/usr/lib/x86_64-linux-gnu -L/usr/local/lib -L./lib -lpthread -ljson -lmysqlclient -lev
+LNK_FLAGS := -L/usr/lib/x86_64-linux-gnu -L/usr/local/lib -L./lib -lpthread -ljson -lmysqlclient -lev '-Wl,-rpath,./lib'
 #这里递归遍历3级子目录  
 DIRS := $(shell find $(SRC_DIR) -maxdepth 3 -type d)
 #将每个子目录添加到搜索路径  
@@ -31,7 +31,7 @@ $(DEPS_DIR)/%.d:%.cpp
 	set -e; rm -f $@;\
 	$(CC) -MM $(CC_FLAGS) $< > $@.;\
 #	sed's,$*\.o[:]*,$(OBJ_DIR)/\1.o $@:,g'<$@.> $@;\
-	rm -f $@.
+#	rm -f $@.
 #前面加-表示忽略错误
 -include $(DEPS)
 .PHONY : clean
